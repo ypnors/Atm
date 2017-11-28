@@ -12,6 +12,7 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
     boolean logon =false;
+    public static final int FUNC_LOGIN=1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         if(!logon){
             Intent intent =new Intent(this,LoginActivity.class);
-            startActivity(intent);
+            startActivityForResult(intent,FUNC_LOGIN);
         }
 
 
