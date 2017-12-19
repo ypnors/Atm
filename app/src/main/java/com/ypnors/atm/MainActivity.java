@@ -12,11 +12,33 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import static android.R.attr.data;
+
 public class MainActivity extends AppCompatActivity {
 
-    private static final int REQUEST_USERINFO =102 ;
+    public static final int REQUEST_USERINFO =105 ;
     boolean logon =false;
-   private final static int REQUEST_LOGIN=102;
+   public static final int REQUEST_LOGIN=102;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+       // startActivity(new Intent(this,Ch8Activity.class));
+        if(!logon){
+            Intent intent =new Intent(this,LoginActivity.class);
+            startActivityForResult(intent,REQUEST_LOGIN);
+        }
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener((view) {
+            Intent userinfo=new Intent(MainActivity.this, UserInfoActivity.class);
+            startActivityForResult(userinfo,REQUEST_USERINFO);
+        }
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -30,7 +52,8 @@ public class MainActivity extends AppCompatActivity {
                             .edit()
                             .putString("USERID",uid)
                             .apply();
-                }else {
+                }
+                else {
                     finish();
             }
        break;
@@ -40,28 +63,18 @@ public class MainActivity extends AppCompatActivity {
                         String phone =data.getStringExtra("EXTRA_PHONE");
                         Toast.makeText(this,"Nickname"+nickname,Toast.LENGTH_LONG).show();
                         Toast.makeText(this,"Phone"+phone,Toast.LENGTH_LONG).show();
+                        getSharedPreferences("atm",MODE_PRIVATE)
+                                .edit()
+                                .putString("ID",)
+                                .apply();
                     }
                     break;
         }
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        if(!logon){
-            Intent intent =new Intent(this,LoginActivity.class);
-            startActivityForResult(intent,REQUEST_LOGIN);
-        }
-
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
