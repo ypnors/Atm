@@ -10,6 +10,9 @@ import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import static android.R.attr.data;
@@ -38,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
             Intent userinfo=new Intent(MainActivity.this, UserInfoActivity.class);
             startActivityForResult(userinfo,REQUEST_USERINFO);
         }
+
     }
 
     @Override

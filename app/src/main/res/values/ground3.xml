@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="ground_array">
+        <item>信義區</item>
+        <item>大安區</item>
+        <item>士林區</item>
+    </array>
+</resources>

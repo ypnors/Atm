@@ -1,5 +1,6 @@
 package com.ypnors.atm;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -34,6 +35,10 @@ public class UserInfoActivity extends AppCompatActivity {
         ages.setAdapter(adapter);
     }
 
+    public void addr(View view){
+        startActivity(new Intent(this,CityActivity.class));
+    }
+
     public void ok(View view){
         Log.d(TAG,"ok:"+ages.getSelectedItem().toString());
         int age =Integer.parseInt(ages.getSelectedItem().toString());
@@ -45,5 +50,9 @@ public class UserInfoActivity extends AppCompatActivity {
         getIntent().putExtra("EXTRA_Phone",phone);
         setResult(RESULT_OK,getIntent());
         finish();
+    }
+
+    public void map(View view){
+
     }
 }

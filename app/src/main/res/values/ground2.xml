@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="ground2_array">
+        <item>永和區</item>
+        <item>板橋區</item>
+        <item>新莊區</item>
+    </array>
+</resources>

@@ -25,6 +25,9 @@
             android:name=".Ch8Activity"
             android:label="@string/title_activity_ch8"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".AddrActivity" />
+        <activity android:name=".CityActivity" />
+        <activity android:name=".AreaActivity"></activity>
     </application>
 
 </manifest>

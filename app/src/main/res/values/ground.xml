@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="ground_array">
+        <item>中正區</item>
+        <item>暖暖區</item>
+        <item>八堵區</item>
+    </array>
+</resources>
