@@ -24,6 +24,7 @@ public class Tester {
             System.out.println(birthday);
         }catch (ParseException e){
             e.printStackTrace();
+            
         }
 
     }
